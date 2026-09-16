@@ -1,0 +1,17 @@
+workflow:
+  rules:
+  - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    when: never
+  - when: always
+
+pages:
+  stage: deploy
+  image: alpine:latest
+  script:
+  - mkdir -p public
+  - cp index.html public/
+  artifacts:
+    paths:
+    - public
+  rules:
+  - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
