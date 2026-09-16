@@ -12,7 +12,7 @@
   --glass-blur:16px;--glass-radius:24px;
   --glass-bg:rgba(255,255,255,.42);--glass-border:1px solid rgba(255,255,255,.75);
   --glass-shadow:0 8px 24px -14px rgba(30,35,50,.2);
-  --bg:#e2e5de;--ink:#2b2e35;--ink-soft:#7b7f8a;
+  --bg:#e8ebe5;--ink:#2b2e35;--ink-soft:#7b7f8a;
   --red:#d21f3c;--red-deep:#b0142e;--red-glow:rgba(210,31,60,0);
   --font:'IBM Plex Sans Arabic','SF Arabic',system-ui,sans-serif;
   --ease:cubic-bezier(.22,.61,.36,1);--ease-bounce:cubic-bezier(.34,1.56,.64,1);
@@ -23,17 +23,7 @@ body{font-family:var(--font);color:var(--ink);background:var(--bg);min-height:10
 .glass{background:var(--glass-bg);-webkit-backdrop-filter:blur(var(--glass-blur)) saturate(170%);backdrop-filter:blur(var(--glass-blur)) saturate(170%);border:var(--glass-border);border-radius:var(--glass-radius);box-shadow:var(--glass-shadow)}
 
 /* AMBIENT */
-.ambient{position:fixed;inset:0;z-index:0;pointer-events:none;
-  background:
-    radial-gradient(100% 55% at 50% 100%,rgba(60,85,65,.14),transparent 68%),
-    radial-gradient(85% 45% at 15% 80%,rgba(40,65,45,.16),transparent 52%),
-    radial-gradient(75% 40% at 88% 72%,rgba(80,105,85,.12),transparent 48%),
-    radial-gradient(115% 38% at 50% 58%,rgba(150,170,155,.2),transparent 55%),
-    radial-gradient(95% 30% at 72% 42%,rgba(195,205,195,.16),transparent 50%),
-    radial-gradient(105% 42% at 28% 35%,rgba(210,215,205,.2),transparent 55%),
-    radial-gradient(90% 25% at 50% 18%,rgba(232,228,218,.28),transparent 45%),
-    linear-gradient(178deg,#e8e5df 0%,#e0ddd6 12%,#d8d8d0 25%,#d0d5cc 40%,#c5cfbf 55%,#b8c5b2 70%,#aec0a8 85%,#a5b8a0 100%);
-}
+.ambient{position:fixed;inset:0;z-index:0;pointer-events:none;background:#e8ebe5}
 
 /* NAV */
 .nav{position:fixed;top:16px;right:50%;transform:translateX(50%);z-index:60;display:flex;align-items:center;gap:4px;padding:8px 12px;border-radius:999px;animation:navDrop .7s var(--ease) both}
@@ -353,6 +343,13 @@ footer{position:relative;z-index:1;max-width:1100px;margin:48px auto 0;padding:0
 .chk-ok b{display:block;font-size:18px;font-weight:700;margin-bottom:6px}
 .chk-ok p{font-size:12px;font-weight:300;color:var(--ink-soft);line-height:1.8}
 
+/* NATURE BACKGROUNDS */
+.abg{position:absolute;inset:0;background-size:cover;background-repeat:no-repeat;pointer-events:none;filter:brightness(1.15) saturate(.55)}
+.abg1{background-image:url('bg1.jfif');background-position:right top;opacity:.15}
+.abg2{background-image:url('bg2.jfif');background-position:center 20%;opacity:.12}
+.abg3{background-image:url('bg3.jfif');background-position:left bottom;opacity:.14}
+.abg4{background-image:url('bg4.jfif');background-position:right bottom;opacity:.13}
+
 /* SEARCH FLASH */
 @keyframes flash{0%{box-shadow:0 0 0 0 rgba(90,110,150,.3)}100%{box-shadow:0 0 0 22px rgba(90,110,150,0)}}
 .flash{animation:flash .7s ease-out}
@@ -367,7 +364,12 @@ footer{position:relative;z-index:1;max-width:1100px;margin:48px auto 0;padding:0
 <body>
 
 <div class='splash' id='splash'><div class='sring'></div><div class='slogo'>شغ<b>ف</b></div></div>
-<div class='ambient' aria-hidden='true'></div>
+<div class='ambient' aria-hidden='true'>
+  <span class='abg abg1'></span>
+  <span class='abg abg2'></span>
+  <span class='abg abg3'></span>
+  <span class='abg abg4'></span>
+</div>
 
 <nav class='nav glass' aria-label='التنقل الرئيسي'>
   <span class='brand'>شغ<b>ف</b></span>
