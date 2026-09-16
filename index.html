@@ -12,7 +12,7 @@
   --glass-blur:16px;--glass-radius:24px;
   --glass-bg:rgba(255,255,255,.34);--glass-border:1px solid rgba(255,255,255,.65);
   --glass-shadow:0 8px 32px -12px rgba(158,165,180,.28);
-  --bg:#f4f5f8;--ink:#2b2e35;--ink-soft:#7b7f8a;
+  --bg:#f4f2f5;--ink:#2b2e35;--ink-soft:#7b7f8a;
   --red:#d21f3c;--red-deep:#b0142e;--red-glow:rgba(210,31,60,.25);
   --font:'IBM Plex Sans Arabic','SF Arabic',system-ui,sans-serif;
   --ease:cubic-bezier(.22,.61,.36,1);--ease-bounce:cubic-bezier(.34,1.56,.64,1);
@@ -23,11 +23,16 @@ body{font-family:var(--font);color:var(--ink);background:var(--bg);min-height:10
 .glass{background:var(--glass-bg);-webkit-backdrop-filter:blur(var(--glass-blur)) saturate(170%);backdrop-filter:blur(var(--glass-blur)) saturate(170%);border:var(--glass-border);border-radius:var(--glass-radius);box-shadow:var(--glass-shadow)}
 
 /* AMBIENT */
-.ambient{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-.ambient span{position:absolute;border-radius:50%;filter:blur(90px)}
-.ambient .a1{width:440px;height:440px;top:-120px;right:8%;background:rgba(210,31,60,.16)}
-.ambient .a2{width:540px;height:540px;top:34%;left:-170px;background:rgba(190,200,215,.42)}
-.ambient .a3{width:380px;height:380px;bottom:-110px;right:30%;background:rgba(234,236,242,.7)}
+.ambient{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    radial-gradient(rgba(120,125,140,.07) 1px,transparent 1.6px),
+    radial-gradient(62% 46% at 82% 0%,rgba(210,31,60,.18),transparent 62%),
+    radial-gradient(56% 42% at 12% 18%,rgba(120,172,228,.26),transparent 66%),
+    radial-gradient(72% 52% at 10% 94%,rgba(207,166,226,.2),transparent 60%),
+    radial-gradient(46% 36% at 96% 80%,rgba(84,196,196,.18),transparent 62%),
+    linear-gradient(150deg,#f8f4f0 0%,#eef0f6 48%,#f4eef3 100%);
+  background-size:28px 28px,auto,auto,auto,auto;
+}
 
 /* NAV */
 .nav{position:fixed;top:16px;right:50%;transform:translateX(50%);z-index:60;display:flex;align-items:center;gap:4px;padding:8px 12px;border-radius:999px;animation:navDrop .7s var(--ease) both}
@@ -361,7 +366,7 @@ footer{position:relative;z-index:1;max-width:1100px;margin:48px auto 0;padding:0
 <body>
 
 <div class='splash' id='splash'><div class='sring'></div><div class='slogo'>شغ<b>ف</b></div></div>
-<div class='ambient' aria-hidden='true'><span class='a1'></span><span class='a2'></span><span class='a3'></span></div>
+<div class='ambient' aria-hidden='true'></div>
 
 <nav class='nav glass' aria-label='التنقل الرئيسي'>
   <span class='brand'>شغ<b>ف</b></span>
